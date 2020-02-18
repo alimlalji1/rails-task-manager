@@ -1,0 +1,34 @@
+<%= form_for @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.label :completed %>
+  <%= f.check_box :completed %>
+  <%= f.submit "Create task"%>
+<% end %>
+
+<%= link_to "Back to tasks list", tasks_path %>
+
+<!-- Same as:
+<form class="new_task" id="new_task" action="/tasks" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
+  <label for="task_name">Name</label>
+  <input type="text" name="task[name]" id="task_name">
+  <label for="task_details">details</label>
+  <input type="text" name="task[details]" id="task_details">
+  <label for="task_completed">completed</label>
+  <input type="number" name="task[completed]" id="task_completed">
+  <input type="submit" name="commit" value="Create task" data-disable-with="Create task">
+</form
+-->
+
+<!-- All properties of task in hash => therefore, can access in task[:]
+params {
+  task{
+    name:
+    details:
+    completed:
+  }
+}
+-->

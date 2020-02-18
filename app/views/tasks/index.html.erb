@@ -1,0 +1,12 @@
+<h1>My Tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <!-- link_to(title, path): => if click on task - will redirect you to show page for that task -->
+    <!-- task_path => path for show page (see route - show prefix = task) -->
+    <!-- (task) - from routes, show page is dynamic - depends on id of page => therefore, pass in the restaurant instance variable -->
+    <li><%= link_to task.title, task_path(task) %> - <%= task.completed %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new task", tasks_new_path %>
